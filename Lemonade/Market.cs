@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    public class Market : Stock
+    public class Market
     {
         //member variables
 
         //constructor
         //member methods
-        PurchaseLemons()
+        public void GoToMarket()
         {
-            Console.WriteLine(");
-        }
-        PurchaseCups()
-        {
+            PurchaseLemons();
+            PurchaseCups()
+            {
 
-        }
-        PurchaseSugar()
-        {
+            }
+            PurchaseSugar()
+            {
 
-        }
-        PurchaseIce()
-        {
+            }
+            PurchaseIce()
+            {
 
+            }
         }
     }
 }

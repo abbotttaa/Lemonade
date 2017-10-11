@@ -6,19 +6,33 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    class Game
+    public class Game
     {
-        Weather weatherCall = new Weather();
         Stock stockCheck = new Stock();
+        Market restock = new Market();
+        Date checkDay;
         string weather;
         string stock;
-        startDayCheck()
+        public void startDayCheck()
         {
-            weather = weatherCall.DetermineWeather();
-            Console.WriteLine("Today's forcast is" + weather + ".");
-            stockCheck.FullStock();
-            Console.WriteLine("In stock you currently have...Do you want to purchase more at the market?");
 
+            checkDay = new Date();
+            stockCheck.FullStock();
+            string responce =Console.ReadLine();
+            if (responce == "Yes")
+            {
+                restock.GoToMarket();
+                RecipePrompt();
+            }
+            else
+            {
+                RecipePrompt();
+            }
+
+        }
+        public void RecipePrompt()
+        {
+            recipeCraft.CraftYourBrew();            
         }
         //gives you the weather, your balance, your stock, the day, and will prompt you asking if you want to buy more supplies, how you want to make your lemo,
         // and how much you want to charge. 

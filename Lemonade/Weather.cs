@@ -10,6 +10,7 @@ namespace Lemonade
     {
         //member variable
         Random random = new Random();
+        string weather;
         //constructor
         //member methods
         public string DetermineWeather()
@@ -18,19 +19,22 @@ namespace Lemonade
             switch (RandomPick)
             {
                 case 1:
-                    return "Scorching Hot";
+                    return weather = "Scorching Hot";
                 case 2:
-                    return "Sunny and Hot";
+                    return weather = "Sunny and Hot";
                 case 3:
-                    return "Mild and Warm";
+                    return weather = "Mild and Warm";
                 case 4:
-                    return "Cloudy and Mild";
+                    return weather = "Cloudy and Mild";
                 case 5:
-                    return "Foggy and Cold";
+                    return weather = "Foggy and Cold";
                 default:
                     return "";
             }
         }
-
+        public void DeclareWeather()
+        {
+            Console.WriteLine("Today's forcast is" + weather + ".");
+        }
     }
 }
