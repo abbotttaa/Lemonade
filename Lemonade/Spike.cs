@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    class Date
+    class Spike : Customer
     {
-        //member methods
-        int days;
-        //cunstructor
-        //member methods
     }
 }

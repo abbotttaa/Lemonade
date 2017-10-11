@@ -8,5 +8,14 @@ namespace Lemonade
 {
     class Customer
     {
+        //member variable
+        public int LemonadePref;
+        double PicePref;
+        //constructor
+        //member method
+        Occurrence()
+        {
+
+        }
     }
 }

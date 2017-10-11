@@ -43,8 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs" />
+    <Compile Include="Date.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="Johnny.cs" />
+    <Compile Include="Market.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Spike.cs" />
+    <Compile Include="Stock.cs" />
+    <Compile Include="Timmy.cs" />
+    <Compile Include="Weather.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
