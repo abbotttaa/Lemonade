@@ -9,7 +9,8 @@ namespace Lemonade
     public class Market
     {
         //member variables
-
+        double price;
+        int quantity;
         //constructor
         //member methods
         public void GoToMarket(Player player)
@@ -77,11 +78,15 @@ namespace Lemonade
             int quantity = Int32.Parse(Console.ReadLine());
             int i;
             double price = .25;
+            bool balanceCheck = player.piggybank.BalanceChecker(price, quantity);
+            if (balanceCheck == true)
+            {
                 for (i = 0; i < quantity; i++)
                 {
                     player.stock.lemons.Add(new Lemon());
-                    player.piggybank.money -= price; 
+                    player.piggybank.money -= price;
                 }
+            }
         }
         public void PurchaseCups(Player player)
         {
@@ -89,23 +94,31 @@ namespace Lemonade
             int quantity = Int32.Parse(Console.ReadLine());
             int i;
             double price = 1.35;
+            bool balanceCheck = player.piggybank.BalanceChecker(price, quantity);
+            if (balanceCheck == true)
+            {
                 for (i = 0; i < quantity; i++)
                 {
                     player.stock.cups.Add(new Cups());
                     player.piggybank.money -= price;
                 }
+            }
         }
         public void PurchaseSugar(Player player)
         {
             Console.WriteLine("How many sugar cubes do you want to buy? They come in packs of 5, for $0.55 each.");
             int quantity = Int32.Parse(Console.ReadLine());
             int i;
-            double price = .55;            
+            double price = .55;
+            bool balanceCheck = player.piggybank.BalanceChecker(price, quantity);
+            if (balanceCheck == true)
+            {
                 for (i = 0; i < quantity; i++)
                 {
                     player.stock.sugar.Add(new Sugar());
                     player.piggybank.money -= price;
-                }            
+                }
+            }
         }
         public void PurchaseIce(Player player)
         {
@@ -113,12 +126,15 @@ namespace Lemonade
             int quantity = Int32.Parse(Console.ReadLine());
             int i;
             double price = .99;
-            player.piggybank.BalanceChecker(int quantity, double price);
+            bool balanceCheck = player.piggybank.BalanceChecker(price, quantity);
+            if (balanceCheck == true)
+            {
                 for (i = 0; i < quantity; i++)
                 {
                     player.stock.ice.Add(new Ice());
                     player.piggybank.money -= price;
                 }
+            }
         }
         
 

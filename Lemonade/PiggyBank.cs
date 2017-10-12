@@ -12,14 +12,18 @@ namespace Lemonade
         public double money;
         //constructor
         //member method
-        public void BalanceChecker(Player player)
+        public bool BalanceChecker(double price, int quantity)
         {
-            if (player.piggybank.money < (quantity * price))
+            if (money < (quantity * price))
             {
-                Console.WriteLine("Sorry buddy, you dont have the money to make that purchase. Your balance sits at $" + player.piggybank.money + ".");
+                Console.WriteLine("Sorry buddy, you dont have the money to make that purchase. Your balance sits at $" + money + ".");
+                return false;
             }
             else
             {
+                return true;
             }
+
         }
+    }
 }

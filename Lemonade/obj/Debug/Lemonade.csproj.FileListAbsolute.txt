@@ -1,1 +1,2 @@
 C:\Users\abbot\Desktop\All\DevCodeCamp\C#\Examples\Lemonade\Lemonade\bin\Debug\Lemonade.exe.config
+C:\Users\abbot\Desktop\All\DevCodeCamp\C#\Examples\Lemonade\Lemonade\obj\Debug\Lemonade.csprojResolveAssemblyReference.cache

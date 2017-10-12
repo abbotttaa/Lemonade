@@ -11,16 +11,21 @@ namespace Lemonade
         Date day = new Date();
         Player player = new Player();
         Market market = new Market();
-        public void startDayTasks()
+        public void ExplainRules()
+        {
+            Console.WriteLine("You make and sell lemonaid now.  Each day, you'll sell lemonade that you designed, and set the price.  Many things will determine if you are succesful or not. Weather will change each day, which will mean more or less buisness. You should also set wise prices. \n You'll need to stock up on the components to make and sell your lemonade aswell.");
+
+        }
+        public void StartDayTasks()
         {
         day.StartDayCheck();
         player.StockCheck();
         Console.WriteLine("Would you like to restock at the market? Yes(1) or No(2).");
             string responce = Console.ReadLine();
                 if(responce == "1")
-            {
-                market.GoToMarket(player);
-            }
+                {
+                    market.GoToMarket(player);
+                }
         } 
         //gives you the weather, your balance, your stock, the day, and will prompt you asking if you want to buy more supplies, how you want to make your lemo,
         // and how much you want to charge. 
