@@ -8,32 +8,20 @@ namespace Lemonade
 {
     public class Game
     {
-        Stock stockCheck = new Stock();
-        Market restock = new Market();
-        Date checkDay;
-        string weather;
-        string stock;
-        public void startDayCheck()
+        Date day = new Date();
+        Player player = new Player();
+        Market market = new Market();
+        public void startDayTasks()
         {
-
-            checkDay = new Date();
-            stockCheck.FullStock();
-            string responce =Console.ReadLine();
-            if (responce == "Yes")
+        day.StartDayCheck();
+        player.StockCheck();
+        Console.WriteLine("Would you like to restock at the market? Yes(1) or No(2).");
+            string responce = Console.ReadLine();
+                if(responce == "1")
             {
-                restock.GoToMarket();
-                RecipePrompt();
+                market.GoToMarket(Player player);
             }
-            else
-            {
-                RecipePrompt();
-            }
-
-        }
-        public void RecipePrompt()
-        {
-            recipeCraft.CraftYourBrew();            
-        }
+        } 
         //gives you the weather, your balance, your stock, the day, and will prompt you asking if you want to buy more supplies, how you want to make your lemo,
         // and how much you want to charge. 
         simADay();

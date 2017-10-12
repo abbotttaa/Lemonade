@@ -9,8 +9,12 @@ namespace Lemonade
     class Player
     {
         //member variable
-        public Stock stock = new Stock();
+        public Stock stock = new Stock();        
         //constructor
         //member method
+        public void StockCheck()
+        {
+            stock.FullStock();            
+        }
     }
 }

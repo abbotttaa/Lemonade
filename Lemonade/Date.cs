@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    class Date
+    public class Date
     {
         //member methods
         int days;
@@ -14,10 +14,13 @@ namespace Lemonade
         DailyBrew recipeCraft = new DailyBrew();
         //constructor
         //member methods
-        public void StartDayCheck(Player player)
+        public Date()
         {
-            weatherCall.DeclareWeather();
-            
+
+        }
+        public void StartDayCheck()
+        {
+            weatherCall.DeclareWeather();            
             recipeCraft.CraftYourBrew();
         }
     }

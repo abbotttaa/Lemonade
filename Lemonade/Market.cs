@@ -12,9 +12,18 @@ namespace Lemonade
 
         //constructor
         //member methods
-        public void GoToMarket()
+        public void GoToMarket(Player player)
         {
-            PurchaseLemons();
+            PurchaseLemons()
+            {
+                Console.WriteLine("How many lemons do you want to buy? They're **** each.");
+                int lemons = Int32.Parse(Console.ReadLine());
+                for(i = 0, i < lemons, i++)
+                {
+
+                }
+
+            }
             PurchaseCups()
             {
 

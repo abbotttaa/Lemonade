@@ -8,7 +8,7 @@ namespace Lemonade
 {
     public class Stock
     {
-        //member variable
+        //member variable        
         public List<Lemon> lemons;
         public List<Cups> cups;
         public List<Sugar> sugar;
@@ -17,7 +17,7 @@ namespace Lemonade
         //member method
         public void FullStock()
         {
-            Console.WriteLine("You have "+lemons+" lemons, "+cups+" cups, "+sugar+" sugar, "+ice+" ice.");
+            Console.WriteLine("You have "+lemons.Count+" lemons, "+cups.Count+" cups, "+sugar.Count+" sugar, "+ice.Count+" ice.");
         }
     }
 }
