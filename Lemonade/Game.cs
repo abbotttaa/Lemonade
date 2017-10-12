@@ -19,7 +19,7 @@ namespace Lemonade
             string responce = Console.ReadLine();
                 if(responce == "1")
             {
-                market.GoToMarket(Player player);
+                market.GoToMarket(player);
             }
         } 
         //gives you the weather, your balance, your stock, the day, and will prompt you asking if you want to buy more supplies, how you want to make your lemo,
