@@ -18,5 +18,13 @@ namespace Lemonade
         {
             stock.FullStock();            
         }
+        public void CheckForSale(double pricePref , double perCupPrice)
+        {
+            if (pricePref <= perCupPrice)
+            {
+                piggybank.money += perCupPrice;
+                
+            }
+        }
     }
 }

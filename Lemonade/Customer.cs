@@ -9,9 +9,11 @@ namespace Lemonade
     public class Customer
     {
         //member variable
-        public int LemonadePref;
-        public double PricePref;
-        public double SpawnChance;
+        
+        public double pricePref;
+        public double spawnChance;
+        public int[] brewPref;
+        
         Random random = new Random();
         //constructor
         //member method
@@ -20,33 +22,36 @@ namespace Lemonade
             switch (weather)
             {
                 case "Scorching Hot":
-                    SpawnChance = 90;
+                    spawnChance = 90;
                     break;
                 case "Sunny and Hot":
-                    SpawnChance = 70;
+                    spawnChance = 70;
                     break;
                 case "Mild and Warm":
-                    SpawnChance = 50;
+                    spawnChance = 50;
                     break;
                 case "Cloudy and Mild":
-                    SpawnChance = 40;
+                    spawnChance = 40;
                     break;
                 case "Foggy and Cold":
-                    SpawnChance = 20;
+                    spawnChance = 20;
                     break;
                 default:
                     break;
             }
             return;
         }
-        public void SpawnTrigger(double SpawnChance)
+        public void SpawnTrigger(int[] brew, double perCupPrice, Player player)
         { 
-        int RandomPick = random.Next(1, 101);
-            if(RandomPick >= SpawnChance)
+        int randomPick = random.Next(1, 101);
+            if(randomPick >= spawnChance)
             {
-                RollForCustomer();
+                CustomerPrefBrew();
+                CustomerPricePref(brewPref, brew);
+                player.CheckForSale(pricePref,perCupPrice);
             }           
         }
+        
         //public void RollForCustomer()
         //{
         //    int RandomPick = random.Next(1, 4);
@@ -65,26 +70,27 @@ namespace Lemonade
         //}
         public void CustomerPrefBrew()
         {
-            int[] BrewPref = new int[3];
-            for (int i = 0; i >= BrewPref.Length; i++)
+            int[] brewPref = new int[3];
+            for (int i = 0; i >= brewPref.Length; i++)
             {
-                int RandomPick = random.Next(1, 6);
-                BrewPref[i] = RandomPick; 
+                int randomPick = random.Next(1, 6);
+                brewPref[i] = randomPick; 
+                
             }
 
         }
 
-        public void CustomerPricePref(int[] BrewPref, int[] Brew)
+        public void CustomerPricePref(int[] brewPref, int[] brew)
         {
-            for(int i = 0; i >=BrewPref.Length; i++)
+            for(int i = 0; i >=brewPref.Length; i++)
             {
-                if(BrewPref[i] == Brew[i])
+                if(brewPref[i] == brew[i])
                 {
                     double pricePref += .50;
                 }
                 else
                 {
-                    int result = BrewPref[i] - Brew[i];
+                    int result = brewPref[i] - brew[i];
                      if(result == -1 ||result == 1)
                     {
                         double pricePref += .35;
@@ -104,6 +110,6 @@ namespace Lemonade
                 }
             }
         }
-        public void 
+        
     }
 }

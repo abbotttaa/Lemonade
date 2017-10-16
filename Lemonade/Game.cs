@@ -29,17 +29,16 @@ namespace Lemonade
                     market.GoToMarket(player);
                 }
         } 
-        //gives you the weather, your balance, your stock, the day, and will prompt you asking if you want to buy more supplies, how you want to make your lemo,
-        // and how much you want to charge. 
         public void simADay()
         {
             customer.Occurrence(day.weatherCall.weather);
 
-            OpenForBiz()
+            DayRun()
             {                
                 for (int i = 0; i >= 100; i++)
                 {
-                    customer.SpawnTrigger(customer.SpawnChance, player.brew);
+                    customer.SpawnTrigger(player.brew.brew, player.brew.perCupPrice, player);
+
                 }
             }
         }
@@ -47,7 +46,7 @@ namespace Lemonade
         //Will run the day. this will contain methods that basicly run encounter rates for customers, based on the weather, and each customer will have random preferences
         //that determine when they spawn, if they are interested in your lemonade. It's also going to have to keep track of active stock, as you will be consuming
         // as you sell, thus, the day MUST end when you run out, or cant produce more product
-        EoDStatus();
+        public void EoDStatus();
         //Gives a run down of the day. should show how much you GAINED that day, howmany people you served, and howmany people walked past. WILL also display stock count.
     }
 }
