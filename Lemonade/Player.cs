@@ -10,7 +10,8 @@ namespace Lemonade
     {
         //member variable
         public Stock stock = new Stock();
-        public PiggyBank piggybank = new PiggyBank();           
+        public PiggyBank piggybank = new PiggyBank();
+        public DailyBrew brew = new DailyBrew();        
         //constructor
         //member method
         public void StockCheck()

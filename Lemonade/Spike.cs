@@ -8,5 +8,8 @@ namespace Lemonade
 {
     class Spike : Customer
     {
+        //member variable
+        //constructor
+        //member method
     }
 }

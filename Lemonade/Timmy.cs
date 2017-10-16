@@ -8,5 +8,12 @@ namespace Lemonade
 {
     class Timmy : Customer
     {
+        //member variable
+        //constructor
+        //member method
+        TimmyCheck()
+        {
+
+        }
     }
 }

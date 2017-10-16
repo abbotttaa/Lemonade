@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lemonade
 {
-    class Weather
+   public class Weather
     {
         //member variable
         Random random = new Random();
-        string weather;
+        public string weather;
         //constructor
         //member methods
         public string DetermineWeather()

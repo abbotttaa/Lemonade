@@ -8,5 +8,8 @@ namespace Lemonade
 {
     class Johnny : Customer
     {
+        //member variable
+        //constructor
+        //member method
     }
 }

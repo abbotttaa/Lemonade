@@ -106,10 +106,10 @@ namespace Lemonade
         }
         public void PurchaseSugar(Player player)
         {
-            Console.WriteLine("How many sugar cubes do you want to buy? They come in packs of 5, for $0.55 each.");
+            Console.WriteLine("How many sugar cubes do you want to buy? They come in packs of 5, for $0.85 each.");
             int quantity = Int32.Parse(Console.ReadLine());
             int i;
-            double price = .55;
+            double price = .85;
             bool balanceCheck = player.piggybank.BalanceChecker(price, quantity);
             if (balanceCheck == true)
             {

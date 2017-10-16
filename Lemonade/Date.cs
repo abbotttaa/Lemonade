@@ -10,7 +10,7 @@ namespace Lemonade
     {
         //member methods
         int days;
-        Weather weatherCall = new Weather();
+        public Weather weatherCall = new Weather();
         DailyBrew recipeCraft = new DailyBrew();
         //constructor
         //member methods
@@ -23,5 +23,6 @@ namespace Lemonade
             weatherCall.DeclareWeather();            
             recipeCraft.CraftYourBrew();
         }
+
     }
 }
