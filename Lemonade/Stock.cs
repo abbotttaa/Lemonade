@@ -9,10 +9,10 @@ namespace Lemonade
     public class Stock
     {
         //member variable        
-        public List<Lemon> lemons;
-        public List<Cups> cups;
-        public List<Sugar> sugar;
-        public List<Ice> ice;
+        public List<Lemon> lemons = new List<Lemon>();
+        public List<Cups> cups = new List<Cups>();
+        public List<Sugar> sugar = new List<Sugar>();
+        public List<Ice> ice = new List<Ice>();
         //constructor
         //member method
         public void FullStock()

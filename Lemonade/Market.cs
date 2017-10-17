@@ -18,60 +18,54 @@ namespace Lemonade
             DoYouWantLemons(player);
             DoYouWantCups(player);
             DoYouWantSugar(player);
-            DoYouWantIce(player);                       
+            DoYouWantIce(player);
+            GetEverythingYouNeed(player);                       
+        }
+        public void GetEverythingYouNeed(Player player)
+        {
+            Console.WriteLine("Do you have everything you need, or should you go back in the market? I have everything(1) or back to the market(2)");
+            string responce = Console.ReadLine();
+            if(responce == "2")
+            {
+                GoToMarket(player);
+            }
         }
         public void DoYouWantLemons(Player player)
         {
-            Console.WriteLine("Do you want to buy lemons? Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy lemons? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
-            if(responce == "1")
+            if (responce == "1")
             {
                 PurchaseLemons(player);
-                DoYouWantCups(player);
-            }
-            else
-            {
-                DoYouWantCups(player);
             }
         }
         public void DoYouWantCups(Player player)
         {
-            Console.WriteLine("Do you want to buy cups? Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy cups? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
             if (responce == "1")
             {
                 PurchaseCups(player);
-                DoYouWantSugar(player);
-            }
-            else
-            {
-                DoYouWantSugar(player);
             }
         }
         public void DoYouWantSugar(Player player)
         {
-            Console.WriteLine("Do you want to buy sugar? Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy sugar? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
             if (responce == "1")
             {
                 PurchaseSugar(player);
-                DoYouWantIce(player);
-            }
-            else
-            {
-                DoYouWantIce(player);
             }
         }
         public void DoYouWantIce(Player player)
         {
-            Console.WriteLine("Do you want to buy ice? Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy ice? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
             if (responce == "1")
             {
                 PurchaseIce(player);
             }           
         }
-
         public void PurchaseLemons(Player player)
         {
             Console.WriteLine("How many lemons do you want to buy? They're $0.25 each.");
@@ -84,8 +78,9 @@ namespace Lemonade
                 for (i = 0; i < quantity; i++)
                 {
                     player.stock.lemons.Add(new Lemon());
-                    player.piggybank.money -= price;
+                    player.piggybank.money -= price;                
                 }
+                Math.Round(player.piggybank.money, 2);
             }
         }
         public void PurchaseCups(Player player)
@@ -102,6 +97,7 @@ namespace Lemonade
                     player.stock.cups.Add(new Cups());
                     player.piggybank.money -= price;
                 }
+                Math.Round(player.piggybank.money, 2);
             }
         }
         public void PurchaseSugar(Player player)
@@ -118,6 +114,7 @@ namespace Lemonade
                     player.stock.sugar.Add(new Sugar());
                     player.piggybank.money -= price;
                 }
+                Math.Round(player.piggybank.money, 2);
             }
         }
         public void PurchaseIce(Player player)
@@ -134,6 +131,7 @@ namespace Lemonade
                     player.stock.ice.Add(new Ice());
                     player.piggybank.money -= price;
                 }
+                Math.Round(player.piggybank.money, 2);
             }
         }
         

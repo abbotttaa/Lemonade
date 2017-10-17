@@ -35,7 +35,7 @@ namespace Lemonade
         public void DeclareWeather()
         {
             DetermineWeather();
-            Console.WriteLine("Today's forcast is" + weather + ".");
+            Console.WriteLine("Today's forcast is " + weather + ".");
         }
     }
 }

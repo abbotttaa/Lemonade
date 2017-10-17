@@ -48,7 +48,7 @@ namespace Lemonade
             {
                 CustomerPrefBrew();
                 CustomerPricePref(brewPref, brew);
-                player.CheckForSale(pricePref,perCupPrice);
+                player.CheckForSale(pricePref,perCupPrice, player);
             }           
         }
         
@@ -82,30 +82,31 @@ namespace Lemonade
 
         public void CustomerPricePref(int[] brewPref, int[] brew)
         {
+            double pricePref = 0;
             for(int i = 0; i >=brewPref.Length; i++)
             {
                 if(brewPref[i] == brew[i])
                 {
-                    double pricePref += .50;
+                    pricePref += .50;
                 }
                 else
                 {
                     int result = brewPref[i] - brew[i];
                      if(result == -1 ||result == 1)
                     {
-                        double pricePref += .35;
+                        pricePref += .35;
                     }
                      else if(result == -2 || result == 2)
                     {
-                        double pricePref += .25;
+                        pricePref += .25;
                     }
                      else if(result == -3 || result == 3)
                     {
-                        double pricePref += .15;
+                        pricePref += .15;
                     }
                      else if(result == -4 ||result == 4)
                     {
-                        double pricePref += .10;
+                        pricePref += .10;
                     }
                 }
             }

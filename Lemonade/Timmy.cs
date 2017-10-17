@@ -11,9 +11,6 @@ namespace Lemonade
         //member variable
         //constructor
         //member method
-        TimmyCheck()
-        {
-
-        }
+        
     }
 }

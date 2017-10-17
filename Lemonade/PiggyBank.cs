@@ -9,7 +9,7 @@ namespace Lemonade
     public class PiggyBank
     {
         //member variable
-        public double money;
+        public double money = 15.00;
         //constructor
         //member method
         public bool BalanceChecker(double price, int quantity)
