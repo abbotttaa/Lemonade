@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Lemonade
 {
@@ -11,6 +12,7 @@ namespace Lemonade
         //member variables
         double price;
         int quantity;
+        SqlConnection sql = new SqlConnection();
         //constructor
         //member methods
         public void GoToMarket(Player player)
@@ -32,7 +34,7 @@ namespace Lemonade
         }
         public void DoYouWantLemons(Player player)
         {
-            Console.WriteLine("Do you want to buy lemons? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy lemons? You have "+player.piggybank.money.ToString("C")+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
             if (responce == "1")
             {
@@ -41,7 +43,7 @@ namespace Lemonade
         }
         public void DoYouWantCups(Player player)
         {
-            Console.WriteLine("Do you want to buy cups? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy cups? You have "+player.piggybank.money.ToString("C")+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
             if (responce == "1")
             {
@@ -50,7 +52,7 @@ namespace Lemonade
         }
         public void DoYouWantSugar(Player player)
         {
-            Console.WriteLine("Do you want to buy sugar? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy sugar? You have "+player.piggybank.money.ToString("C")+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
             if (responce == "1")
             {
@@ -59,7 +61,7 @@ namespace Lemonade
         }
         public void DoYouWantIce(Player player)
         {
-            Console.WriteLine("Do you want to buy ice? You have $"+player.piggybank.money.ToString()+". Yes(1) or No(2)");
+            Console.WriteLine("Do you want to buy ice? You have "+player.piggybank.money.ToString("C")+". Yes(1) or No(2)");
             string responce = Console.ReadLine();
             if (responce == "1")
             {

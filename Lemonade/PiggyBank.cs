@@ -9,7 +9,9 @@ namespace Lemonade
     public class PiggyBank
     {
         //member variable
-        public double money = 15.00;
+        public double money = 115.00;
+        public double startOfDayMoney;
+        public double moneyMadeToday;
         //constructor
         //member method
         public bool BalanceChecker(double price, int quantity)
@@ -25,5 +27,10 @@ namespace Lemonade
             }
 
         }
+        public double RoundToCurrency(Player player)
+        {
+            return Math.Round(player.piggybank.money, 2);
+        }
+        
     }
 }

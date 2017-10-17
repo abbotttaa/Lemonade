@@ -19,5 +19,17 @@ namespace Lemonade
         {
             Console.WriteLine("You have "+lemons.Count+" lemons, "+cups.Count+" cups, "+sugar.Count+" sugar, "+ice.Count+" ice.");
         }
+        public void SoldACup()
+        {
+            try
+            {
+                cups.RemoveAt(0);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Youre out of cups!");
+
+            }
+        }
     }
 }

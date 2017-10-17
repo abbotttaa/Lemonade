@@ -44,34 +44,18 @@ namespace Lemonade
         public void SpawnTrigger(int[] brew, double perCupPrice, Player player)
         { 
         int randomPick = random.Next(1, 101);
-            if(randomPick >= spawnChance)
+            if(randomPick <= spawnChance)
             {
                 CustomerPrefBrew();
                 CustomerPricePref(brewPref, brew);
                 player.CheckForSale(pricePref,perCupPrice, player);
             }           
         }
-        
-        //public void RollForCustomer()
-        //{
-        //    int RandomPick = random.Next(1, 4);
-        //    switch (RandomPick)
-        //    {
-        //        case 1:
-        //            TimmyCheck();
-        //            break;
-        //        case 2:
-        //            JohnnyCheck();
-        //            break;
-        //        case 3:
-        //            SpikeCheck();
-        //            break;
-        //    }
-        //}
+
         public void CustomerPrefBrew()
         {
-            int[] brewPref = new int[3];
-            for (int i = 0; i >= brewPref.Length; i++)
+            brewPref = new int[3];
+            for (int i = 0; i < brewPref.Length; i++)
             {
                 int randomPick = random.Next(1, 6);
                 brewPref[i] = randomPick; 
@@ -82,8 +66,8 @@ namespace Lemonade
 
         public void CustomerPricePref(int[] brewPref, int[] brew)
         {
-            double pricePref = 0;
-            for(int i = 0; i >=brewPref.Length; i++)
+            pricePref = 0;
+            for(int i = 0; i < brewPref.Length; i++)
             {
                 if(brewPref[i] == brew[i])
                 {
@@ -92,7 +76,7 @@ namespace Lemonade
                 else
                 {
                     int result = brewPref[i] - brew[i];
-                     if(result == -1 ||result == 1)
+                     if(result == -1 || result == 1)
                     {
                         pricePref += .35;
                     }

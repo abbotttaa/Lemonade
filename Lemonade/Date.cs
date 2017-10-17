@@ -9,9 +9,9 @@ namespace Lemonade
     public class Date
     {
         //member methods
-        int days;
+        public int days;
         public Weather weatherCall = new Weather();
-        DailyBrew recipeCraft = new DailyBrew();
+        
         //constructor
         //member methods
         public Date()
@@ -21,7 +21,11 @@ namespace Lemonade
         public void StartDayCheck()
         {
             weatherCall.DeclareWeather();            
-            recipeCraft.CraftYourBrew();
+            
+        }
+        public void endDayTick()
+        {
+            days++;
         }
 
     }

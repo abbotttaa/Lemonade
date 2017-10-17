@@ -14,6 +14,7 @@ namespace Lemonade
             game.ExplainRules();
             game.StartDayTasks();
             game.simADay();
+            game.EndOfDaySum();
 
         }
     }
