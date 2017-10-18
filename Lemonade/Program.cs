@@ -10,11 +10,10 @@ namespace Lemonade
     {
         static void Main(string[] args)
         {
+
             Game game = new Game();
             game.ExplainRules();
-            game.StartDayTasks();
-            game.simADay();
-            game.EndOfDaySum();
+            game.MasterGame();
 
         }
     }

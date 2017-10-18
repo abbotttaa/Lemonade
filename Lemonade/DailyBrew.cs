@@ -15,7 +15,7 @@ namespace Lemonade
 
        public void ReduceLemon(Player player)
         {
-            if (brew[0] < player.stock.lemons.Count)
+            if (brew[0] <= player.stock.lemons.Count)
             {
                 for (int i = 0; i < brew[0]; i++)
                 {
@@ -25,7 +25,7 @@ namespace Lemonade
         }
         public void ReduceIce(Player player)
         {
-            if (brew[2] < player.stock.ice.Count)
+            if (brew[2] <= player.stock.ice.Count)
             {
                 for (int i = 0; i < brew[2]; i++)
                 {
@@ -35,7 +35,7 @@ namespace Lemonade
         }
         public void ReduceSugar(Player player)
         {
-            if (brew[1] < player.stock.sugar.Count)
+            if (brew[1] <= player.stock.sugar.Count)
             {
                 for (int i = 0; i < brew[1]; i++)
                 {
@@ -47,7 +47,7 @@ namespace Lemonade
         {
             if (BrewCharges <= 0)
             {
-                if(brew[2] < player.stock.ice.Count && brew[1] < player.stock.sugar.Count && brew[0] < player.stock.lemons.Count)
+                if(brew[2] <= player.stock.ice.Count && brew[1] <= player.stock.sugar.Count && brew[0] <= player.stock.lemons.Count)
                 {
                     ReduceLemon(player);
                     ReduceSugar(player);

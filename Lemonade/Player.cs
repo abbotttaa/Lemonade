@@ -14,6 +14,7 @@ namespace Lemonade
         public DailyBrew brew = new DailyBrew();
         public int salesMade;
         public int salesMadeTotal;
+        public string buisnessStatus = "open";
         //constructor
         //member method
         public void CraftYourBrew()
@@ -67,17 +68,21 @@ namespace Lemonade
                     brew.BrewCharges--;
                     salesMade++;
                     salesMadeTotal++;
+                    piggybank.allTimeMoney += perCupPrice;
+                    piggybank.dailyMoney += perCupPrice;
                     player.stock.cups.RemoveAt(0);
                 }
                 else
                 {
                     Console.WriteLine("You're out of supplies!");
+                    buisnessStatus = "closed";
                 }
             }
         }
-        public void resetDailySales()
+        public void resetDailys()
         {
             salesMade = 0;
+            piggybank.dailyMoney = 0;
         }
     }
 }

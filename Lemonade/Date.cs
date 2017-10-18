@@ -18,10 +18,10 @@ namespace Lemonade
         {
 
         }
-        public void StartDayCheck()
+        public void StartDayCheck(Player player)
         {
-            weatherCall.DeclareWeather();            
-            
+            weatherCall.DeclareWeather();
+            player.buisnessStatus = "open";
         }
         public void endDayTick()
         {
